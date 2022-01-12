@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <style>
+        body {
+            margin: 0;
+            background: #F4F1F8;
+        }
+
+        caption {
+            font-weight: bold;
+            font-size: 2em;
+            padding: 5px;
+            color: #202526;
+            text-shadow: 1px 1px 0 rgba(0, 0, 0, .3);
+
+        }
+
+        caption:before, caption:after {
+            content: "\274B";
+            color: #e0df7a;
+            margin: 0 10px;
+        }
+
+        table {
+            width: 350px;
+
+        }
+
+        td, th {
+            padding: 5px;
+            border: 1px solid gray;
+        }
+
+        th {
+            background: #ffb6c1;
+        }
+    </style>
+</head>
+<body>
+<table>
+
+    <caption>Car</caption>
+
+    <tr>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Color</th>
+    </tr>
+    <th:block th:each="car : ${cars}">
+        <tr>
+            <td th:text="${car.model}"></td>
+            <td th:text="${car.series}"></td>
+            <td th:text="${car.color}"></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
